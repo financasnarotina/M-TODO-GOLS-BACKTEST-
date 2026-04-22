@@ -1,0 +1,277 @@
+{
+  "league": "Ligue 1 Francesa",
+  "aliases": [
+    "Ligue 1",
+    "France Ligue 1",
+    "Ligue 1 France"
+  ],
+  "shadow_methods": [
+    "FRU35 Under 3.5 em observação",
+    "FRO25 Over 2.5 agressivo em observação"
+  ],
+  "blocked_notes": [
+    "Nao promover BTTS amplo",
+    "Nao promover Over 3.5",
+    "Nao promover over monetizado agressivo sem filtro frances proprio",
+    "Priorizar nucleo estrutural e HT 0.5 filtrado"
+  ],
+  "methods": [
+    {
+      "code": "FR1",
+      "name": "FR1_HT05_PRESSAO_REAL_V1",
+      "status": "Premium Monetizado",
+      "evidence_type": "Monetizado",
+      "market": "Over 0.5 HT",
+      "objective": "Capturar gol no 1 tempo quando a pressão inicial dos dois lados estiver acima do padrão da liga",
+      "criteria": [
+        {
+          "field": "sum_xg_ht_s5",
+          "op": ">=",
+          "value": 1.1723,
+          "label": "H xg ht s5 + A xg ht s5 >= 1.1723"
+        },
+        {
+          "field": "sum_gf_ht_s5",
+          "op": ">=",
+          "value": 1.4,
+          "label": "H gf ht s5 + A gf ht s5 >= 1.4"
+        },
+        {
+          "field": "avg_ht05_l10",
+          "op": ">=",
+          "value": 0.8,
+          "label": "avg_ht05_l10 >= 0.80"
+        },
+        {
+          "field": "sot_total_recent",
+          "op": ">=",
+          "value": 9.4,
+          "label": "sot total recent >= 9.4"
+        },
+        {
+          "field": "odd_over05_ht",
+          "op": "between",
+          "value": [
+            1.25,
+            1.45
+          ],
+          "label": "Over HT 0.5 entre 1.25 e 1.45"
+        }
+      ]
+    },
+    {
+      "code": "FR2",
+      "name": "FR2_HOME_O05_IMPOSICAO_V1",
+      "status": "Premium Estrutural",
+      "evidence_type": "Estrutural",
+      "market": "Casa over 0.5 gol",
+      "objective": "Capturar mandante francês com imposição real e visitante permissivo",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.6006,
+          "label": "H xg s5 >= 1.6006"
+        },
+        {
+          "field": "a_xga_s5",
+          "op": ">=",
+          "value": 1.6198,
+          "label": "A xga s5 >= 1.6198"
+        },
+        {
+          "field": "h_team_o05_s5",
+          "op": ">=",
+          "value": 0.8,
+          "label": "H team o05 s5 >= 0.80"
+        },
+        {
+          "field": "a_cs_s5",
+          "op": "<=",
+          "value": 0.2,
+          "label": "A cs s5 <= 0.20"
+        },
+        {
+          "field": "h_sot_s5",
+          "op": ">=",
+          "value": 4.6,
+          "label": "H sot s5 >= 4.6"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    },
+    {
+      "code": "FR3",
+      "name": "FR3_GOAL_2T_PERSISTENCIA_V1",
+      "status": "Premium Estrutural",
+      "evidence_type": "Estrutural",
+      "market": "Gol no 2 tempo",
+      "objective": "Capturar persistência ofensiva pós-intervalo na Ligue 1",
+      "criteria": [
+        {
+          "field": "sum_xg_2t_s5",
+          "op": ">=",
+          "value": 1.2658,
+          "label": "H xg 2t s5 + A xg 2t s5 >= 1.2658"
+        },
+        {
+          "field": "sum_gf_2t_s5",
+          "op": ">=",
+          "value": 1.6,
+          "label": "H gf 2t s5 + A gf 2t s5 >= 1.6"
+        },
+        {
+          "field": "avg_goal2t_l10",
+          "op": ">=",
+          "value": 0.85,
+          "label": "avg goal2t l10 >= 0.85"
+        },
+        {
+          "field": "sot_total_recent",
+          "op": ">=",
+          "value": 9.4,
+          "label": "sot total recent >= 9.4"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.024,
+          "label": "xg total recent >= 2.024"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    },
+    {
+      "code": "FR4",
+      "name": "FR4_HOME_O15_FORCA_V1",
+      "status": "Seletivo",
+      "evidence_type": "Estrutural",
+      "market": "Casa over 1.5 gol",
+      "objective": "Capturar mandante francês forte para marcar 2 ou mais apenas em spots muito claros",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.9887,
+          "label": "H xg s5 >= 1.9887"
+        },
+        {
+          "field": "a_xga_s5",
+          "op": ">=",
+          "value": 1.6198,
+          "label": "A xga s5 >= 1.6198"
+        },
+        {
+          "field": "h_team_o15_s5",
+          "op": ">=",
+          "value": 0.6,
+          "label": "H team o15 s5 >= 0.60"
+        },
+        {
+          "field": "h_sot_s5",
+          "op": ">=",
+          "value": 6.03,
+          "label": "H sot s5 >= 6.03"
+        },
+        {
+          "field": "home_fav",
+          "op": "==",
+          "value": 1,
+          "label": "home fav == 1"
+        }
+      ],
+      "notes": [
+        "Método estrutural seletivo: não é método base da liga."
+      ]
+    },
+    {
+      "code": "FRU35",
+      "name": "FRU35_CONTAIN_SHADOW_V1",
+      "status": "Sombra Numerica",
+      "evidence_type": "Monetizado",
+      "market": "Under 3.5 FT",
+      "objective": "Método francês em observação sem promoção oficial ainda",
+      "auto_approve": false,
+      "criteria": [
+        {
+          "field": "lambda_total",
+          "op": "<=",
+          "value": 1.2734,
+          "label": "lambda total <= 1.2734"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": "<=",
+          "value": 2.5809,
+          "label": "xg total recent <= 2.5809"
+        },
+        {
+          "field": "avg_u35_l10",
+          "op": ">=",
+          "value": 0.7,
+          "label": "avg u35 l10 >= 0.70"
+        },
+        {
+          "field": "avg_o35_l10",
+          "op": "<=",
+          "value": 0.25,
+          "label": "avg o35 l10 <= 0.25"
+        },
+        {
+          "field": "odd_under35",
+          "op": "<=",
+          "value": 1.4,
+          "label": "Under FT 3.5 <= 1.40"
+        }
+      ]
+    },
+    {
+      "code": "FRO25",
+      "name": "FRO25_AGRESSIVO_SHADOW_V1",
+      "status": "Sombra Numerica",
+      "evidence_type": "Monetizado",
+      "market": "Over 2.5 FT",
+      "objective": "Método francês agressivo em observação sem promoção oficial ainda",
+      "auto_approve": false,
+      "criteria": [
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 3.049,
+          "label": "xg total recent >= 3.049"
+        },
+        {
+          "field": "avg_o25_l10",
+          "op": ">=",
+          "value": 0.55,
+          "label": "avg o25 l10 >= 0.55"
+        },
+        {
+          "field": "scored_both",
+          "op": ">=",
+          "value": 0.75,
+          "label": "scored both >= 0.75"
+        },
+        {
+          "field": "conceded_both",
+          "op": ">=",
+          "value": 0.75,
+          "label": "conceded both >= 0.75"
+        },
+        {
+          "field": "odd_over25",
+          "op": "between",
+          "value": [
+            1.4,
+            1.65
+          ],
+          "label": "Over FT 2.5 entre 1.40 e 1.65"
+        }
+      ]
+    }
+  ]
+}

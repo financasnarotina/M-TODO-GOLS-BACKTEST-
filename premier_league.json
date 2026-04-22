@@ -1,0 +1,265 @@
+{
+  "league": "Premier League",
+  "aliases": [
+    "EPL",
+    "Premier"
+  ],
+  "shadow_methods": [
+    "Menos de 2.5 gols controlado",
+    "Mais de 2.5 gols por favoritos ofensivos",
+    "BTTS Nao por contencao ajustado"
+  ],
+  "blocked_notes": [],
+  "methods": [
+    {
+      "code": "EPL1",
+      "name": "Mais de 1.5 gols estrutural",
+      "status": "Ativo",
+      "evidence_type": "Monetizado",
+      "market": "Over 1.5 FT",
+      "objective": "Capturar jogos com alta chance de pelo menos 2 gols sem depender de odd alta",
+      "criteria": [
+        {
+          "field": "lambda_total",
+          "op": ">=",
+          "value": 2.9532,
+          "label": "lambda total >= 2.9532"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.9864,
+          "label": "xg total recent >= 2.9864"
+        },
+        {
+          "field": "scored_both",
+          "op": ">=",
+          "value": 0.8,
+          "label": "scored both >= 0.80"
+        },
+        {
+          "field": "avg_o15_l10",
+          "op": ">=",
+          "value": 0.8,
+          "label": "avg o15 l10 >= 0.80"
+        },
+        {
+          "field": "odd_over15",
+          "op": "<=",
+          "value": 1.22,
+          "label": "Over FT 1.5 <= 1.22"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "code": "EPL2",
+      "name": "Menos de 3.5 gols protegido",
+      "status": "Ativo",
+      "evidence_type": "Monetizado",
+      "market": "Under 3.5 FT",
+      "objective": "Capturar jogo controlado sem explosão excessiva de gols",
+      "criteria": [
+        {
+          "field": "lambda_total",
+          "op": "<=",
+          "value": 2.9532,
+          "label": "lambda total <= 2.9532"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": "<=",
+          "value": 2.4165,
+          "label": "xg total recent <= 2.4165"
+        },
+        {
+          "field": "avg_u35_l10",
+          "op": ">=",
+          "value": 0.65,
+          "label": "avg u35 l10 >= 0.65"
+        },
+        {
+          "field": "avg_o35_l10",
+          "op": "<=",
+          "value": 0.35,
+          "label": "avg o35 l10 <= 0.35"
+        },
+        {
+          "field": "odd_under35",
+          "op": "<=",
+          "value": 1.91,
+          "label": "Under FT 3.5 <= 1.91"
+        }
+      ]
+    },
+    {
+      "code": "EPL3",
+      "name": "Ambas marcam sim bilateral",
+      "status": "Ativo",
+      "evidence_type": "Monetizado",
+      "market": "BTTS Yes",
+      "objective": "Capturar BTTS quando os dois lados produzem e concedem de forma real",
+      "criteria": [
+        {
+          "field": "h_scored_s5",
+          "op": ">=",
+          "value": 1.0,
+          "label": "H scored s5 >= 1.00"
+        },
+        {
+          "field": "a_scored_s5",
+          "op": ">=",
+          "value": 0.8,
+          "label": "A scored s5 >= 0.80"
+        },
+        {
+          "field": "conceded_both",
+          "op": ">=",
+          "value": 0.8,
+          "label": "conceded both >= 0.80"
+        },
+        {
+          "field": "avg_btts_yes_l10",
+          "op": ">=",
+          "value": 0.65,
+          "label": "avg btts yes l10 >= 0.65"
+        },
+        {
+          "field": "odd_btts_yes",
+          "op": ">=",
+          "value": 1.57,
+          "label": "BTTS Yes >= 1.57"
+        }
+      ]
+    },
+    {
+      "code": "EPL4",
+      "name": "Mais de 2.5 gols com ataques fortes ajustado",
+      "status": "Premium Monetizado",
+      "evidence_type": "Monetizado",
+      "market": "Over 2.5 FT",
+      "objective": "Capturar over 2.5 em jogos com ataques realmente fortes dos dois lados",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.7,
+          "label": "H xg s5 >= 1.70"
+        },
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 1.164,
+          "label": "A xg s5 >= 1.164"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.7228,
+          "label": "xg total recent >= 2.7228"
+        },
+        {
+          "field": "scored_both",
+          "op": ">=",
+          "value": 0.75,
+          "label": "scored both >= 0.75"
+        },
+        {
+          "field": "odd_over25",
+          "op": "between",
+          "value": [
+            1.6,
+            1.9
+          ],
+          "label": "Over FT 2.5 entre 1.60 e 1.90"
+        }
+      ]
+    },
+    {
+      "code": "EPL5",
+      "name": "Ambas marcam sim ataque e concessao ajustado",
+      "status": "Premium Monetizado",
+      "evidence_type": "Monetizado",
+      "market": "BTTS Yes",
+      "objective": "Capturar BTTS com força ofensiva e permissividade defensiva combinadas",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.412,
+          "label": "H xg s5 >= 1.412"
+        },
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 1.164,
+          "label": "A xg s5 >= 1.164"
+        },
+        {
+          "field": "conceded_both",
+          "op": ">=",
+          "value": 0.8,
+          "label": "conceded both >= 0.80"
+        },
+        {
+          "field": "avg_btts_yes_l10",
+          "op": ">=",
+          "value": 0.55,
+          "label": "avg btts yes l10 >= 0.55"
+        },
+        {
+          "field": "odd_btts_yes",
+          "op": "between",
+          "value": [
+            1.55,
+            2.1
+          ],
+          "label": "BTTS Yes entre 1.55 e 2.10"
+        }
+      ]
+    },
+    {
+      "code": "EPL6",
+      "name": "Time da casa over 0.5 por imposicao",
+      "status": "Premium Estrutural",
+      "evidence_type": "Estrutural",
+      "market": "Casa over 0.5 gol",
+      "objective": "Capturar mandante com imposição ofensiva suficiente para marcar ao menos 1",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.419,
+          "label": "H xg s5 >= 1.419"
+        },
+        {
+          "field": "a_xga_s5",
+          "op": ">=",
+          "value": 1.695,
+          "label": "A xga s5 >= 1.695"
+        },
+        {
+          "field": "h_team_o05_s5",
+          "op": ">=",
+          "value": 0.8,
+          "label": "H team o05 s5 >= 0.80"
+        },
+        {
+          "field": "a_cs_s5",
+          "op": "<=",
+          "value": 0.2,
+          "label": "A cs s5 <= 0.20"
+        },
+        {
+          "field": "h_sot_s5",
+          "op": ">=",
+          "value": 4.4,
+          "label": "H sot s5 >= 4.4"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "league": "Serie A Italiana",
+  "aliases": [
+    "Serie A",
+    "Serie A Italy"
+  ],
+  "shadow_methods": [
+    "BTTS Sim ataque e concessao ajustado",
+    "Mais de 2.5 gols equilibrado",
+    "ITA3 Under 3.5"
+  ],
+  "blocked_notes": [],
+  "methods": [
+    {
+      "code": "ITA1",
+      "name": "Mais de 2.5 gols com ataques fortes",
+      "status": "Ativo Controlado",
+      "evidence_type": "Monetizado",
+      "market": "Over 2.5 FT",
+      "objective": "Capturar over 2.5 com ataques fortes apenas com preço e contexto favoráveis",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.332,
+          "label": "H xg s5 >= 1.332"
+        },
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 0.93,
+          "label": "A xg s5 >= 0.93"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.5152,
+          "label": "xg total recent >= 2.5152"
+        },
+        {
+          "field": "scored_both",
+          "op": ">=",
+          "value": 0.75,
+          "label": "scored both >= 0.75"
+        },
+        {
+          "field": "odd_over25",
+          "op": "between",
+          "value": [
+            2.04,
+            2.3
+          ],
+          "label": "Over FT 2.5 entre 2.04 e 2.30"
+        }
+      ]
+    },
+    {
+      "code": "ITA2",
+      "name": "Menos de 2.5 gols controlado",
+      "status": "Bloqueado",
+      "evidence_type": "Monetizado",
+      "market": "Under 2.5 FT",
+      "objective": "Controlado mas sem robustez atual",
+      "auto_approve": false,
+      "criteria": [
+        {
+          "field": "lambda_total",
+          "op": "<=",
+          "value": 2.3,
+          "label": "lambda total <= 2.3"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": "<=",
+          "value": 2.3452,
+          "label": "xg total recent <= 2.3452"
+        },
+        {
+          "field": "sot_total_recent",
+          "op": "<=",
+          "value": 7.6,
+          "label": "sot total recent <= 7.6"
+        },
+        {
+          "field": "avg_u25_l10",
+          "op": ">=",
+          "value": 0.6,
+          "label": "avg u25 l10 >= 0.60"
+        },
+        {
+          "field": "odd_under25",
+          "op": ">=",
+          "value": 1.67,
+          "label": "Under FT 2.5 >= 1.67"
+        }
+      ]
+    },
+    {
+      "code": "ITA3",
+      "name": "Menos de 3.5 gols protegido ajustado",
+      "status": "Sombra Numerica",
+      "evidence_type": "Monetizado",
+      "market": "Under 3.5 FT",
+      "objective": "Ainda sem tração operacional suficiente",
+      "auto_approve": false,
+      "criteria": [
+        {
+          "field": "lambda_total",
+          "op": "<=",
+          "value": 1.2,
+          "label": "lambda total <= 1.2"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": "<=",
+          "value": 2.2,
+          "label": "xg total recent <= 2.2"
+        },
+        {
+          "field": "avg_u35_l10",
+          "op": ">=",
+          "value": 0.65,
+          "label": "avg u35 l10 >= 0.65"
+        },
+        {
+          "field": "avg_o35_l10",
+          "op": "<=",
+          "value": 0.35,
+          "label": "avg o35 l10 <= 0.35"
+        },
+        {
+          "field": "odd_under35",
+          "op": "between",
+          "value": [
+            1.25,
+            1.35
+          ],
+          "label": "Under FT 3.5 entre 1.25 e 1.35"
+        }
+      ]
+    },
+    {
+      "code": "ITA4",
+      "name": "Gol no 1 tempo",
+      "status": "Ativo Controlado",
+      "evidence_type": "Monetizado",
+      "market": "Over 0.5 HT",
+      "objective": "Gol no 1 tempo com uso controlado",
+      "criteria": [
+        {
+          "field": "h_xg_ht_s5",
+          "op": ">=",
+          "value": 0.6507,
+          "label": "H xg ht s5 >= 0.6507"
+        },
+        {
+          "field": "a_xg_ht_s5",
+          "op": ">=",
+          "value": 0.4613,
+          "label": "A xg ht s5 >= 0.4613"
+        },
+        {
+          "field": "h_gf_ht_s5",
+          "op": ">=",
+          "value": 0.4,
+          "label": "H gf ht s5 >= 0.4"
+        },
+        {
+          "field": "a_gf_ht_s5",
+          "op": ">=",
+          "value": 0.4,
+          "label": "A gf ht s5 >= 0.4"
+        },
+        {
+          "field": "odd_over05_ht",
+          "op": ">=",
+          "value": 1.383,
+          "label": "Over HT 0.5 >= 1.383"
+        }
+      ]
+    },
+    {
+      "code": "ITA5",
+      "name": "Time da casa over 0.5 por imposicao",
+      "status": "Premium Estrutural",
+      "evidence_type": "Estrutural",
+      "market": "Casa over 0.5 gol",
+      "objective": "Capturar mandante forte para marcar ao menos 1",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.446,
+          "label": "H xg s5 >= 1.446"
+        },
+        {
+          "field": "a_xga_s5",
+          "op": ">=",
+          "value": 1.281,
+          "label": "A xga s5 >= 1.281"
+        },
+        {
+          "field": "h_team_o05_s5",
+          "op": ">=",
+          "value": 0.8,
+          "label": "H team o05 s5 >= 0.80"
+        },
+        {
+          "field": "a_cs_s5",
+          "op": "<=",
+          "value": 0.2,
+          "label": "A cs s5 <= 0.20"
+        },
+        {
+          "field": "h_sot_s5",
+          "op": ">=",
+          "value": 4.13,
+          "label": "H sot s5 >= 4.13"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    },
+    {
+      "code": "ITA6",
+      "name": "Time visitante over 0.5 por imposicao",
+      "status": "Ativo Controlado",
+      "evidence_type": "Estrutural",
+      "market": "Visitante over 0.5 gol",
+      "objective": "Capturar visitante capaz de marcar ao menos 1 com controle extra",
+      "criteria": [
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 1.048,
+          "label": "A xg s5 >= 1.048"
+        },
+        {
+          "field": "h_xga_s5",
+          "op": ">=",
+          "value": 1.2467,
+          "label": "H xga s5 >= 1.2467"
+        },
+        {
+          "field": "a_team_o05_s5",
+          "op": ">=",
+          "value": 0.6,
+          "label": "A team o05 s5 >= 0.60"
+        },
+        {
+          "field": "h_cs_s5",
+          "op": "<=",
+          "value": 0.4,
+          "label": "H cs s5 <= 0.40"
+        },
+        {
+          "field": "a_sot_s5",
+          "op": ">=",
+          "value": 4.0,
+          "label": "A sot s5 >= 4.0"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    }
+  ]
+}

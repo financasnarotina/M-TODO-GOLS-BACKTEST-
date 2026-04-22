@@ -1,0 +1,216 @@
+{
+  "league": "Championship",
+  "aliases": [],
+  "shadow_methods": [
+    "Menos de 2.5 gols controlado ajustado"
+  ],
+  "blocked_notes": [],
+  "methods": [
+    {
+      "code": "CH1",
+      "name": "Mais de 1.5 gols estrutural",
+      "status": "Premium Monetizado",
+      "evidence_type": "Monetizado",
+      "market": "Over 1.5 FT",
+      "objective": "Capturar over 1.5 com base estrutural forte e estável",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.35,
+          "label": "H xg s5 >= 1.35"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.59,
+          "label": "xg total recent >= 2.59"
+        },
+        {
+          "field": "big_total_recent",
+          "op": ">=",
+          "value": 3.8,
+          "label": "big chances total >= 3.80"
+        },
+        {
+          "field": "h_goals_s5",
+          "op": ">=",
+          "value": 1.8,
+          "label": "H goals s5 >= 1.80"
+        },
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 1.25,
+          "label": "A xg s5 >= 1.25"
+        }
+      ]
+    },
+    {
+      "code": "CH2",
+      "name": "Mais de 2.5 gols equilibrado",
+      "status": "Premium Monetizado",
+      "evidence_type": "Monetizado",
+      "market": "Over 2.5 FT",
+      "objective": "Capturar over 2.5 equilibrado em jogos com criação bilateral",
+      "criteria": [
+        {
+          "field": "h_goals_s5",
+          "op": ">=",
+          "value": 1.6,
+          "label": "H goals s5 >= 1.60"
+        },
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.48,
+          "label": "H xg s5 >= 1.48"
+        },
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 1.25,
+          "label": "A xg s5 >= 1.25"
+        },
+        {
+          "field": "goals_total_recent",
+          "op": ">=",
+          "value": 2.9,
+          "label": "goals total recent >= 2.90"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.34,
+          "label": "xg total recent >= 2.34"
+        }
+      ]
+    },
+    {
+      "code": "CH3",
+      "name": "Mais de 2.5 gols com mando forte ajustado",
+      "status": "Ativo",
+      "evidence_type": "Monetizado",
+      "market": "Over 2.5 FT",
+      "objective": "Capturar over 2.5 com mando forte sem superestimar o visitante",
+      "criteria": [
+        {
+          "field": "h_goals_s5",
+          "op": ">=",
+          "value": 1.2,
+          "label": "H goals s5 >= 1.20"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.23,
+          "label": "xg total recent >= 2.23"
+        },
+        {
+          "field": "goals_total_recent",
+          "op": ">=",
+          "value": 2.9,
+          "label": "goals total recent >= 2.90"
+        },
+        {
+          "field": "avg_o25_h_l10",
+          "op": ">=",
+          "value": 0.6,
+          "label": "avg o25 h l10 >= 0.60"
+        },
+        {
+          "field": "odd_over25",
+          "op": "between",
+          "value": [
+            1.67,
+            2.1
+          ],
+          "label": "Over FT 2.5 entre 1.67 e 2.10"
+        }
+      ]
+    },
+    {
+      "code": "CH4",
+      "name": "Gol no 1 tempo",
+      "status": "Premium Monetizado",
+      "evidence_type": "Monetizado",
+      "market": "Over 0.5 HT",
+      "objective": "Capturar gol no 1 tempo com pressão inicial real",
+      "criteria": [
+        {
+          "field": "h_xg_ht_s5",
+          "op": ">=",
+          "value": 0.5655,
+          "label": "H xg ht s5 >= 0.5655"
+        },
+        {
+          "field": "a_xg_ht_s5",
+          "op": ">=",
+          "value": 0.3679,
+          "label": "A xg ht s5 >= 0.3679"
+        },
+        {
+          "field": "h_gf_ht_s5",
+          "op": ">=",
+          "value": 0.4,
+          "label": "H gf ht s5 >= 0.4"
+        },
+        {
+          "field": "a_gf_ht_s5",
+          "op": ">=",
+          "value": 0.6,
+          "label": "A gf ht s5 >= 0.6"
+        },
+        {
+          "field": "odd_over05_ht",
+          "op": ">=",
+          "value": 1.44,
+          "label": "Over HT 0.5 >= 1.44"
+        }
+      ]
+    },
+    {
+      "code": "CH5",
+      "name": "Time da casa over 0.5 por imposicao",
+      "status": "Premium Estrutural",
+      "evidence_type": "Estrutural",
+      "market": "Casa over 0.5 gol",
+      "objective": "Capturar mandante muito propenso a marcar ao menos 1",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.3987,
+          "label": "H xg s5 >= 1.3987"
+        },
+        {
+          "field": "a_xga_s5",
+          "op": ">=",
+          "value": 1.36,
+          "label": "A xga s5 >= 1.36"
+        },
+        {
+          "field": "h_team_o05_s5",
+          "op": ">=",
+          "value": 0.8,
+          "label": "H team o05 s5 >= 0.80"
+        },
+        {
+          "field": "a_cs_s5",
+          "op": "<=",
+          "value": 0.4,
+          "label": "A cs s5 <= 0.40"
+        },
+        {
+          "field": "h_sot_s5",
+          "op": ">=",
+          "value": 4.6,
+          "label": "H sot s5 >= 4.6"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "league": "Liga MX",
+  "aliases": [],
+  "shadow_methods": [
+    "Menos de 3.5 gols protegido",
+    "Menos de 2.5 gols controlado"
+  ],
+  "blocked_notes": [],
+  "methods": [
+    {
+      "code": "MX1",
+      "name": "Ambas marcam sim bilateral",
+      "status": "Seletivo",
+      "evidence_type": "Monetizado",
+      "market": "BTTS Yes",
+      "objective": "BTTS bilateral ainda com amostra curta para promoção",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.42,
+          "label": "H xg s5 >= 1.42"
+        },
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 1.066,
+          "label": "A xg s5 >= 1.066"
+        },
+        {
+          "field": "conceded_both",
+          "op": ">=",
+          "value": 0.8,
+          "label": "conceded both >= 0.80"
+        },
+        {
+          "field": "avg_btts_yes_l10",
+          "op": ">=",
+          "value": 0.6,
+          "label": "avg btts yes l10 >= 0.60"
+        },
+        {
+          "field": "odd_btts_yes",
+          "op": "between",
+          "value": [
+            1.62,
+            1.75
+          ],
+          "label": "BTTS Yes entre 1.62 e 1.75"
+        }
+      ]
+    },
+    {
+      "code": "MX2",
+      "name": "Mais de 2.5 gols com ataques fortes",
+      "status": "Ativo Controlado",
+      "evidence_type": "Monetizado",
+      "market": "Over 2.5 FT",
+      "objective": "Capturar over 2.5 com ataques fortes em faixa boa de preço",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.5845,
+          "label": "H xg s5 >= 1.5845"
+        },
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 1.022,
+          "label": "A xg s5 >= 1.022"
+        },
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.3971,
+          "label": "xg total recent >= 2.3971"
+        },
+        {
+          "field": "scored_both",
+          "op": ">=",
+          "value": 0.8,
+          "label": "scored both >= 0.80"
+        },
+        {
+          "field": "odd_over25",
+          "op": "between",
+          "value": [
+            1.57,
+            1.8
+          ],
+          "label": "Over FT 2.5 entre 1.57 e 1.80"
+        }
+      ]
+    },
+    {
+      "code": "MX3",
+      "name": "Time da casa over 0.5 por imposicao",
+      "status": "Seletivo",
+      "evidence_type": "Estrutural",
+      "market": "Casa over 0.5 gol",
+      "objective": "Capturar mandante com imposição ofensiva muito forte mas ainda com amostra curta",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.42,
+          "label": "H xg s5 >= 1.42"
+        },
+        {
+          "field": "a_xga_s5",
+          "op": ">=",
+          "value": 1.5472,
+          "label": "A xga s5 >= 1.5472"
+        },
+        {
+          "field": "h_team_o05_s5",
+          "op": ">=",
+          "value": 0.8,
+          "label": "H team o05 s5 >= 0.80"
+        },
+        {
+          "field": "a_cs_s5",
+          "op": "<=",
+          "value": 0.0,
+          "label": "A cs s5 <= 0.00"
+        },
+        {
+          "field": "h_sot_s5",
+          "op": ">=",
+          "value": 5.0,
+          "label": "H sot s5 >= 5.0"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    },
+    {
+      "code": "MX4",
+      "name": "Time visitante over 0.5 por imposicao",
+      "status": "Ativo Controlado",
+      "evidence_type": "Estrutural",
+      "market": "Visitante over 0.5 gol",
+      "objective": "Capturar visitante com força suficiente para marcar ao menos 1",
+      "criteria": [
+        {
+          "field": "a_xg_s5",
+          "op": ">=",
+          "value": 1.2592,
+          "label": "A xg s5 >= 1.2592"
+        },
+        {
+          "field": "h_xga_s5",
+          "op": ">=",
+          "value": 0.97,
+          "label": "H xga s5 >= 0.97"
+        },
+        {
+          "field": "a_team_o05_s5",
+          "op": ">=",
+          "value": 0.8,
+          "label": "A team o05 s5 >= 0.80"
+        },
+        {
+          "field": "h_cs_s5",
+          "op": "<=",
+          "value": 0.4,
+          "label": "H cs s5 <= 0.40"
+        },
+        {
+          "field": "a_sot_s5",
+          "op": ">=",
+          "value": 3.8,
+          "label": "A sot s5 >= 3.8"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "league": "Brasileirao Serie A",
+  "aliases": [
+    "Brasileirão Série A",
+    "Brasileirao",
+    "Brasil Serie A"
+  ],
+  "shadow_methods": [
+    "BRA4 Casa over 1.5 gol",
+    "BRA5 Visitante over 0.5 gol"
+  ],
+  "blocked_notes": [
+    "BTTS Sim bilateral",
+    "Mais de 2.5 gols com ataques fortes",
+    "BTTS Nao por contencao",
+    "Menos de 2.5 gols controlado",
+    "Menos de 3.5 gols protegido",
+    "Gol no 2 tempo por desgaste",
+    "Visitante over 1.5 por forca"
+  ],
+  "methods": [
+    {
+      "code": "BRA1",
+      "name": "Mais de 2.5 gols equilibrado V2",
+      "status": "Ativo Controlado",
+      "evidence_type": "Monetizado",
+      "market": "Over 2.5 FT",
+      "objective": "Capturar over 2.5 equilibrado V2 apenas em spots fortes e sem preço esticado",
+      "criteria": [
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.4,
+          "label": "xg total recent >= 2.4"
+        },
+        {
+          "field": "avg_o25_l10",
+          "op": ">=",
+          "value": 0.55,
+          "label": "avg o25 l10 >= 0.55"
+        },
+        {
+          "field": "scored_both",
+          "op": ">=",
+          "value": 0.75,
+          "label": "scored both >= 0.75"
+        },
+        {
+          "field": "conceded_both",
+          "op": ">=",
+          "value": 0.65,
+          "label": "conceded both >= 0.65"
+        },
+        {
+          "field": "odd_over25",
+          "op": "between",
+          "value": [
+            1.8,
+            2.4
+          ],
+          "label": "Over FT 2.5 entre 1.80 e 2.40"
+        }
+      ]
+    },
+    {
+      "code": "BRA2",
+      "name": "Mais de 1.5 gols estrutural V2",
+      "status": "Ativo Controlado",
+      "evidence_type": "Monetizado",
+      "market": "Over 1.5 FT",
+      "objective": "Capturar over 1.5 estrutural V2 com cuidado especial para preço amassado",
+      "criteria": [
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.2,
+          "label": "xg total recent >= 2.2"
+        },
+        {
+          "field": "scored_both",
+          "op": ">=",
+          "value": 0.75,
+          "label": "scored both >= 0.75"
+        },
+        {
+          "field": "avg_o15_l10",
+          "op": ">=",
+          "value": 0.7,
+          "label": "avg o15 l10 >= 0.70"
+        },
+        {
+          "field": "conceded_both",
+          "op": ">=",
+          "value": 0.6,
+          "label": "conceded both >= 0.60"
+        },
+        {
+          "field": "odd_over15",
+          "op": "between",
+          "value": [
+            1.25,
+            1.55
+          ],
+          "label": "Over FT 1.5 entre 1.25 e 1.55"
+        }
+      ]
+    },
+    {
+      "code": "BRA3",
+      "name": "Time da casa over 0.5 por imposicao V2",
+      "status": "Premium Estrutural",
+      "evidence_type": "Estrutural",
+      "market": "Casa over 0.5 gol",
+      "objective": "Capturar mandante com imposição ofensiva forte para marcar ao menos 1",
+      "criteria": [
+        {
+          "field": "h_xg_s5",
+          "op": ">=",
+          "value": 1.4898,
+          "label": "H l5 xg >= 1.4898"
+        },
+        {
+          "field": "a_xga_s5",
+          "op": ">=",
+          "value": 1.378,
+          "label": "A l5 xga >= 1.378"
+        },
+        {
+          "field": "h_team_o05_s5",
+          "op": ">=",
+          "value": 0.8,
+          "label": "H l5 team o05 >= 0.80"
+        },
+        {
+          "field": "a_cs_s5",
+          "op": "<=",
+          "value": 0.2,
+          "label": "A l5 cs <= 0.20"
+        },
+        {
+          "field": "h_sot_s5",
+          "op": ">=",
+          "value": 4.6,
+          "label": "H l5 sot >= 4.6"
+        }
+      ],
+      "notes": [
+        "Método estrutural: precisa de odd pública coerente e contexto aceitável."
+      ]
+    },
+    {
+      "code": "BRAHT1",
+      "name": "Gol no 1 tempo por pressao V2",
+      "status": "Seletivo",
+      "evidence_type": "Monetizado",
+      "market": "Over 0.5 HT",
+      "objective": "Capturar gol no 1 tempo quando a pressão inicial estiver clara",
+      "criteria": [
+        {
+          "field": "h_xg_ht_s5",
+          "op": ">=",
+          "value": 0.6,
+          "label": "H l5 xg ht >= 0.60"
+        },
+        {
+          "field": "a_xg_ht_s5",
+          "op": ">=",
+          "value": 0.35,
+          "label": "A l5 xg ht >= 0.35"
+        },
+        {
+          "field": "h_gf_ht_s5",
+          "op": ">=",
+          "value": 0.3,
+          "label": "H l5 gf ht >= 0.30"
+        },
+        {
+          "field": "a_gf_ht_s5",
+          "op": ">=",
+          "value": 0.2,
+          "label": "A l5 gf ht >= 0.20"
+        },
+        {
+          "field": "odd_over05_ht",
+          "op": "between",
+          "value": [
+            1.45,
+            1.8
+          ],
+          "label": "Over HT 0.5 entre 1.45 e 1.80"
+        }
+      ]
+    },
+    {
+      "code": "BRAO35",
+      "name": "Mais de 3.5 gols explosivo V1",
+      "status": "Bloqueado",
+      "evidence_type": "Monetizado",
+      "market": "Over 3.5 FT",
+      "objective": "Explosão de gols V1",
+      "auto_approve": false,
+      "criteria": [
+        {
+          "field": "xg_total_recent",
+          "op": ">=",
+          "value": 2.5557,
+          "label": "xg total recent >= 2.5557"
+        },
+        {
+          "field": "big_total_recent",
+          "op": ">=",
+          "value": 4.0,
+          "label": "big total recent >= 4.0"
+        },
+        {
+          "field": "avg_o35_l10",
+          "op": ">=",
+          "value": 0.15,
+          "label": "avg o35 l10 >= 0.15"
+        },
+        {
+          "field": "odd_over35",
+          "op": ">=",
+          "value": 4.0,
+          "label": "Over FT 3.5 >= 4.0"
+        },
+        {
+          "field": "scored_both",
+          "op": ">=",
+          "value": 0.75,
+          "label": "scored both >= 0.75"
+        }
+      ]
+    }
+  ]
+}
